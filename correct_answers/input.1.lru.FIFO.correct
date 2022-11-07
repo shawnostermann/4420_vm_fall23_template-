@@ -1,0 +1,107 @@
+Page size: 10
+Num frames: 4
+Num pages: 10
+Num backing blocks: 10
+Reclaim algorithm: FIFO
+Page Table
+    0 type:MAPPED framenum:0 ondisk:0
+    1 type:MAPPED framenum:1 ondisk:0
+    2 type:MAPPED framenum:2 ondisk:0
+    3 type:MAPPED framenum:3 ondisk:0
+    4 type:UNMAPPED
+    5 type:UNMAPPED
+    6 type:UNMAPPED
+    7 type:UNMAPPED
+    8 type:UNMAPPED
+    9 type:UNMAPPED
+Frame Table
+    0 inuse:1 dirty:0 first_use:1 last_use:8
+    1 inuse:1 dirty:0 first_use:2 last_use:9
+    2 inuse:1 dirty:0 first_use:3 last_use:10
+    3 inuse:1 dirty:0 first_use:4 last_use:4
+Pages referenced: 10
+Pages mapped: 4
+Page misses: 4
+Frames taken: 0
+Frames written to disk: 0
+Frames recovered from disk: 0
+Accessing address 40 (4:0)
+========================
+simulating access r to page 4 (E)
+I need a frame:
+Page Table
+    0 type:MAPPED framenum:0 ondisk:0
+    1 type:MAPPED framenum:1 ondisk:0
+    2 type:MAPPED framenum:2 ondisk:0
+    3 type:MAPPED framenum:3 ondisk:0
+    4 type:UNMAPPED
+    5 type:UNMAPPED
+    6 type:UNMAPPED
+    7 type:UNMAPPED
+    8 type:UNMAPPED
+    9 type:UNMAPPED
+Frame Table
+    0 inuse:1 dirty:0 first_use:1 last_use:8
+    1 inuse:1 dirty:0 first_use:2 last_use:9
+    2 inuse:1 dirty:0 first_use:3 last_use:10
+    3 inuse:1 dirty:0 first_use:4 last_use:4
+Pages referenced: 11
+Pages mapped: 4
+Page misses: 5
+Frames taken: 0
+Frames written to disk: 0
+Frames recovered from disk: 0
+Page 0 has the oldest frame (0)
+No frames were free, so I stole frame 0 from page 0 (A)
+  page 4 was unmapped, giving it frame 0
+Accessing address 50 (5:0)
+========================
+simulating access r to page 5 (F)
+I need a frame:
+Page Table
+    0 type:TAKEN framenum:-1 ondisk:0
+    1 type:MAPPED framenum:1 ondisk:0
+    2 type:MAPPED framenum:2 ondisk:0
+    3 type:MAPPED framenum:3 ondisk:0
+    4 type:MAPPED framenum:0 ondisk:0
+    5 type:UNMAPPED
+    6 type:UNMAPPED
+    7 type:UNMAPPED
+    8 type:UNMAPPED
+    9 type:UNMAPPED
+Frame Table
+    0 inuse:1 dirty:0 first_use:11 last_use:11
+    1 inuse:1 dirty:0 first_use:2 last_use:9
+    2 inuse:1 dirty:0 first_use:3 last_use:10
+    3 inuse:1 dirty:0 first_use:4 last_use:4
+Pages referenced: 12
+Pages mapped: 5
+Page misses: 6
+Frames taken: 1
+Frames written to disk: 0
+Frames recovered from disk: 0
+Page 1 has the oldest frame (1)
+No frames were free, so I stole frame 1 from page 1 (B)
+  page 5 was unmapped, giving it frame 1
+Page Table
+    0 type:TAKEN framenum:-1 ondisk:0
+    1 type:TAKEN framenum:-1 ondisk:0
+    2 type:MAPPED framenum:2 ondisk:0
+    3 type:MAPPED framenum:3 ondisk:0
+    4 type:MAPPED framenum:0 ondisk:0
+    5 type:MAPPED framenum:1 ondisk:0
+    6 type:UNMAPPED
+    7 type:UNMAPPED
+    8 type:UNMAPPED
+    9 type:UNMAPPED
+Frame Table
+    0 inuse:1 dirty:0 first_use:11 last_use:11
+    1 inuse:1 dirty:0 first_use:12 last_use:12
+    2 inuse:1 dirty:0 first_use:3 last_use:10
+    3 inuse:1 dirty:0 first_use:4 last_use:4
+Pages referenced: 12
+Pages mapped: 6
+Page misses: 6
+Frames taken: 2
+Frames written to disk: 0
+Frames recovered from disk: 0
