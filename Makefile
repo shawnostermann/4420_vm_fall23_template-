@@ -8,9 +8,13 @@ default: vm
 
 # this is how you might make the program if written in C/C++
 # alter this as necessary for your program
-vm: vm.o future.o 
-vm.o: vm.h
-future.o: vm.h
+# If you're using python or other non-compiled language, see python_wrapper
+#vm: vm.o future.o 
+#vm.o: vm.h
+#future.o: vm.h
+vm:
+	echo "Makefile not customized yet"
+	exit 1
 
 clean: 
 	rm -f *.o vm input.*.correct input.*.myoutput input.*.myoutput.tail .test.results
@@ -28,7 +32,6 @@ test: vm
 	-./test input.1.lru
 	-./test input.2.only1frame
 	-./test input.handout
-	-./test input.0.psize1
 	-./test input.b.p440
 	-./test input.b.p442
 	-./test input.b.p443
