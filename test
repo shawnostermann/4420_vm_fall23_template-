@@ -14,10 +14,10 @@ for ALG in ${ALGS}; do
     CORRECT=${OUTPUT}.correct
     MYOUTPUT=${OUTPUT}.myoutput
     cp correct_answers/${CORRECT} .
-    LINES=`wc -l < ${CORRECT} | awk '{print $1}'`
+    TAILLINES=`wc -l < ${CORRECT} | awk '{print $1}'`
     ./vm ${FLAGS} $ALG $INPUT > ${MYOUTPUT}
-    tail -${LINES} ${MYOUTPUT} > ${MYOUTPUT}.tail
-    echo "Running diff on the last ${LINES} lines of your file '<correct >myoutput'"
+    tail -${TAILLINES} ${MYOUTPUT} > ${MYOUTPUT}.tail
+    echo "Running diff on the last ${TAILLINES} lines of your file '<correct >myoutput'"
     if diff -q ${CORRECT} ${MYOUTPUT}.tail; then
         echo "+++ PASSES   $CMD" | tee -a ${RESULTS}
     else
