@@ -2,7 +2,7 @@ Page size: 1
 Num frames: 99
 Num pages: 100
 Num backing blocks: 1000
-Reclaim algorithm: Optimal
+Reclaim algorithm: OPTIMAL
 Page Table
     0 type:MAPPED framenum:96 ondisk:0
     1 type:MAPPED framenum:77 ondisk:0
