@@ -1,7 +1,7 @@
 CC=gcc
 CXX=g++
 CFLAGS=-Wall -Werror -O2
-CXXLAGS=${CFLAGS}
+CXXFLAGS=${CFLAGS}
 
 # this rule MUST create an executable program/script called vm (which can be called as "./vm") in the current directory so that it can be tested
 default: vm
